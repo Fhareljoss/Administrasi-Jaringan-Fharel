@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Fharel</title>
+  <style>
+    /* Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #2c3e50;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#" onclick="showSection('identitas')">Identitas Pribadi</a>
+    <a href="#" onclick="showSection('controlpanel')">Control Panel Hosting</a>
+    <a href="#" onclick="showSection('pengantarhosting')">Pengantar Hosting</a> <!-- Tambahan -->
+  </nav>
+
+  <!-- Konten -->
+  <div class="container">
+    
+    <!-- Identitas Pribadi -->
+    <div id="identitas" class="section active">
+      <h1>Identitas Pribadi</h1>
+      <p><strong>Nama:</strong> Fharel</p>
+      <p><strong>Alamat:</strong> Gandul</p>
+      <p><strong>Cita-cita:</strong> Jadi Kaya</p>
+      <p><strong>Hobi:</strong> main game, tidur, nobar</p>
+      <img src="Me.jpg" alt="Foto Fharel">
+    </div>
+
+    <!-- Control Panel Hosting -->
+    <div id="controlpanel" class="section">
+      <h1>Rangkuman Materi Control Panel Hosting</h1>
+      <p>Control panel hosting adalah alat berbasis web yang digunakan untuk memudahkan pengguna dalam mengelola layanan hosting mereka. Control panel yang paling umum digunakan adalah <strong>cPanel</strong>.</p>
+
+      <ul>
+        <li>Mengelola file dan direktori website</li>
+        <li>Membuat dan mengelola akun email</li>
+        <li>Mengatur domain dan subdomain</li>
+        <li>Mengelola database MySQL</li>
+        <li>Menginstal CMS seperti WordPress</li>
+      </ul>
+
+      <h3>Manfaat control panel hosting</h3>
+
+      <ul>
+        <li>Tidak perlu kelokasi server berada.</li>
+        <li>Dapat mengetahui spesifikasi server hosting yang dimiliki.</li>
+        <li>Mampu Mengelola website dengan mudah.</li>
+       
+      </ul>
+
+       <h3>Fungsi-fungsi control panel hosting</h3>
+
+      <ul>
+        <li>Preferance=Mengatur nama,tema,warna,bahasa,dll</li>
+        <li>Mail=Mengelola pesan/email yg dibuat</li>
+        <li>Files=Mengelola File Website </li>
+         <li>Logs=Memonitoring Aktivitas Website</li>
+        <li>Domain=Mengatur Alamat Domain</li>
+        <li>Database=Membuat dan mengelola Database untuk menyimpan data website</li>
+           <li>Software=Untuk menginstall aplikasi Pihak ketiga</li>
+      </ul>
+
+
+
+      <p>Berikut Ilustrasi cPanel:</p>
+      <img src="Cpanel.jpg" alt="Tampilan cPanel">
+    </div>
+
+    <!-- Pengantar Hosting -->
+    <div id="pengantarhosting" class="section">
+      <h1>Pengantar Hosting</h1>
+      <p>Hosting adalah layanan yang memungkinkan individu atau organisasi untuk menyimpan data website mereka di server agar dapat diakses melalui internet.</p>
+
+      <p>Ada beberapa jenis layanan hosting, seperti:</p>
+      <ul>
+        <li><strong>Free Hosting:</strong>Layanan hosting gratis yang biasanya memiliki keterbatasan seperti ruang penyimpanan dan bandwidth, cocok untuk pemula atau proyek kecil.</li>
+        <li><strong>Shared Hosting:</strong> Satu server digunakan bersama oleh banyak pengguna.</li>
+        <li><strong>VPS (Virtual Private Server):</strong> Server virtual dengan kontrol lebih besar dibanding shared hosting.</li>
+        <li><strong>Dedicated Hosting:</strong> Satu server penuh digunakan oleh satu pengguna saja.</li>
+        <li><strong>Cloud Hosting:</strong> Hosting berbasis cloud, skalabilitas tinggi dan lebih fleksibel.</li>
+
+      </ul>
+
+      <p>Hosting bekerja sama dengan domain agar website bisa diakses oleh pengguna melalui alamat URL.</p>
+      <p>Berikut Ilustrasi Hosting:</p>
+
+      <img src="Hosting.jpg" alt="Ilustrasi Pengantar Hosting">
+    </div>
+
+  </div>
+
+  <!-- Script Navigasi -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      const selected = document.getElementById(sectionId);
+      if (selected) selected.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
